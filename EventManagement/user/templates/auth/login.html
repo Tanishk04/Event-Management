@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    <div class="container mt-5">
+        <form method="post" class="border rounded p-4 bg-light">
+            <h3 class="text-center mb-4">Login Here</h3>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="pass" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            <a href="{% url 'signup' %}" class="d-block mt-3">Create an account</a>
+        </form>
+    </div>
+{% endblock %}
